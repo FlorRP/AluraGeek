@@ -1,7 +1,7 @@
 async function cardList() {
     const parrafoError = document.querySelector("[data-error]");
     try {
-        const conexion = await fetch("http://localhost:3000/products");
+        const conexion = await fetch("https://my-json-server.typicode.com/FlorRP/AluraGeek-API/products");
         const convertir = await conexion.json();
 
         if (convertir.length === 0) {
@@ -19,7 +19,7 @@ async function cardList() {
 }
 
 async function creaNuevaCard(name, price, image){
-    const conexion = await fetch("http://localhost:3000/products", {
+    const conexion = await fetch("https://my-json-server.typicode.com/FlorRP/AluraGeek-API/products", {
         method: "POST",
         headers: {"Content-Type":"application/json"},
         body: JSON.stringify({
@@ -34,7 +34,7 @@ async function creaNuevaCard(name, price, image){
 }
 
 async function eliminarCard(id){
-    const conexion = await fetch(`http://localhost:3000/products/${id}`, {
+    const conexion = await fetch(`https://my-json-server.typicode.com/FlorRP/AluraGeek-API/products/${id}`, {
         method: "DELETE",
         headers: {"Content-Type":"application/json"}
     });
