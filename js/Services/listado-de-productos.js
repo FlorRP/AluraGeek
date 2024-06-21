@@ -1,7 +1,21 @@
-async function cardList(){
-    const conexion = await fetch("http://localhost:3000/products");
-    const convertir = conexion.json();
-    return convertir;
+export async function cardList() {
+    const parrafoError = document.querySelector("[data-error]");
+    try {
+        const conexion = await fetch("http://localhost:3000/products");
+        const convertir = await conexion.json();
+
+        if (convertir.length === 0) {
+            // Muestra el párrafo de error si la respuesta está vacía
+            parrafoError.style.display = 'block';
+        } else {
+            // Oculta el párrafo de error si hay contenido
+            parrafoError.style.display = 'none';
+        }
+
+        return convertir;
+    } catch (error) {
+        console.error('Hubo un error:', error);
+    }
 }
 
 async function creaNuevaCard(name, price, image){

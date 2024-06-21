@@ -2,6 +2,7 @@ import { conexionAPI } from "../Services/listado-de-productos.js";
 
 const productosDivision = document.querySelector("[data-productos]");
 const formulario = document.querySelector("[data-form]");
+const parrafoError = document.querySelector("[data-error]")
 
 
 
@@ -31,10 +32,13 @@ function crearCard(name, price, image, id){
 
 async function productos() {
     const listaProductos = await conexionAPI.cardList();
-    listaProductos.forEach(producto => {
-        productosDivision.appendChild(crearCard(producto.name, producto.price, producto.image, producto.id));
-    });
+    if (listaProductos.length > 0) {
+        listaProductos.forEach(producto => {
+            productosDivision.appendChild(crearCard(producto.name, producto.price, producto.image, producto.id));
+        });
+    }
 }
+
 
 formulario.addEventListener("submit", async evento =>{
     evento.preventDefault();
