@@ -2,7 +2,7 @@ import { conexionAPI } from "../Services/listado-de-productos.js";
 
 const productosDivision = document.querySelector("[data-productos]");
 const formulario = document.querySelector("[data-form]");
-const parrafoError = document.querySelector("[data-error]")
+
 
 
 

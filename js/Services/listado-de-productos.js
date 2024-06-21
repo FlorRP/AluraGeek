@@ -1,4 +1,4 @@
-export async function cardList() {
+async function cardList() {
     const parrafoError = document.querySelector("[data-error]");
     try {
         const conexion = await fetch("http://localhost:3000/products");
