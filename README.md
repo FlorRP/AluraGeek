@@ -12,6 +12,6 @@ Lo he probado de manera local y aparece, así que puedo afirmar que funciona cor
 # Métodos HTTP que se utilizan en la app
 
 - <strong>Get:</strong> Mediante la petición de datos a la base de datos (fake API).
-- Post: Mediante el formulario de esta página web se pueden crear nuevos productos, los cuales se agregan a la base de datos (fake API) creada.
-- Delete: Cada producto contiene un botón de borrar con el cual se elimina el producto de la base de datos (fake API) creada.
+- <strong>Post:</strong> Mediante el formulario de esta página web se pueden crear nuevos productos, los cuales se agregan a la base de datos (fake API) creada.
+- <strong>Delete:</strong> Cada producto contiene un botón de borrar con el cual se elimina el producto de la base de datos (fake API) creada.
 
